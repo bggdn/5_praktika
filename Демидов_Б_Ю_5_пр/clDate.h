@@ -1,7 +1,4 @@
-﻿#include <windows.h>
-#include <string>
-#include <stdio.h>
-#include <stdlib.h>
+﻿#pragma once
 #include <iostream>
 
 
@@ -65,17 +62,12 @@ public:
 	//destruct
 	~clDate() { std::cout << "Destruct " << this << "\n"; };
 
+	void increaseDay(unsigned short x)
+	{
+		if (day + x < 31) day += x;
+		else std::cout << "ERROR NUM\n";
+	}
+
 
 };
 
-
-int main()
-{
-	clDate date1;
-	clDate date2(1, 2, 3);
-	Date date = { 1,2,3 };
-	clDate date3(date);
-
-	clDate DC;
-
-}
