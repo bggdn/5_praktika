@@ -3,8 +3,9 @@
 #include "clDate.h"
 #include <fstream>
 #include <cstring>
+#include <iostream>
 
-
+using namespace std;
 
 struct Record
 {

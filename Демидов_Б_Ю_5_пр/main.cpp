@@ -1,5 +1,7 @@
 #include <windows.h>
 #include "clRecord.h"
+#include <iostream>
+
 
 using namespace std;
 
@@ -61,11 +63,11 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	struct Record records[10];
+	struct Record recordss[10];
 
-	records[0] = { "Соя", "Б", "0013000", 45, {03,03,2022}};
-	records[1] = { "Чумиза", "Б", "0008000", 17, {03,04,2022}};
-	records[2] = { "Рис", "З", "0025650", 24, {04,03,2022}};
+	recordss[0] = { "Соя", "Б", "0013000", 45, {03,03,2022}};
+	recordss[1] = { "Чумиза", "Б", "0008000", 17, {03,04,2022}};
+	recordss[2] = { "Рис", "З", "0025650", 24, {04,03,2022}};
 
 	//Пятая практика
 	clDate date1;
@@ -74,5 +76,16 @@ int main()
 	clDate date3(date);
 
 	clDate DC;
+
+	clRecord record1;
+	clRecord* record2 = (clRecord*)malloc(sizeof(clRecord));
+
+	clRecord records[3];
+
+	records[0] = recordss[0];
+	records[1] = recordss[1];
+	records[2] = recordss[2];
+
+
 	return 0;
 }
