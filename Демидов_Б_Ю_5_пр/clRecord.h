@@ -2,6 +2,7 @@
 #include <string>
 #include "clDate.h"
 #include <fstream>
+#include <cstring>
 
 
 
@@ -26,12 +27,14 @@ protected:
 public:
 	string type;
 
-	clRecord() { name = "empty"; type = "0"; area = "00000000";  eff = 0; }
-
 	clRecord(string _name, string _type, string _area, unsigned short _eff, struct Date _date)
 	{
 		name = _name; type = _type; area = _area; eff = _eff; date.setDate_struct(_date);
 	}
+
+	clRecord() { name = "empty"; type = "0"; area = "00000000";  eff = 0; }
+
+	
 
 	clRecord(FILE *textFile) 
 	{
@@ -53,7 +56,7 @@ public:
 
 	void writeFile(FILE* textFile) 
 	{
-		fprintf(textFile, "%s %c %s %d %d %d %d \n", \
+		fprintf(textFile, "%s %s %s %hu %hu %hu %hd \n", \
 			name, \
 			type, \
 			area, \
